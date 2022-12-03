@@ -86,7 +86,7 @@
 
     <select id="selectBySno" resultMap="infoMap">
         select *
-        from info where sno=#{sno};
+        from studentcard where studentid=#{sno};
     </select>
 
     <select id="selectByClazz" resultMap="infoMap">
