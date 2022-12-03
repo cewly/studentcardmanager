@@ -21,7 +21,7 @@
     <delete id="delete">
         delete
         from info
-        where sno=#{sno};
+        where studentid=#{sno};
     </delete>
 
     <update id="update1">
