@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询成绩</title>
+    <link rel="stylesheet" href="css/layui.css">
+</head>
+<body>
+<a href="/">返回首页</a>
+<form action="" onsubmit="return false">
+    学号：<input type="text" placeholder="请输入学号" id="sno">
+    <button id="selectBtn1">查询</button>
+    <br>
+    班级：
+    <select name="clazz" id="clazz">
+        <option value="信息安全2001">信息安全2001</option>
+        <option value="物联网1901">物联网1901</option>
+        <option value="计算机1902">计算机1902</option>
+        <option value="软件工程1811">软件工程1811</option>
+        <option value="智能科技2002">智能科技2002</option>
+    </select>
+    <button id="selectBtn2">查询</button>
+</form>
+<table class="layui-hide" id="box" lay-filter="demo"></table></div>
+
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/layui.js" charset="utf-8"></script>
+<script>
+    layui.use('table', function() {
+        var table = layui.table;
+        $('#selectBtn1').click(function() {
+
+            var $parentNode = $(this).parent();
+            var $sno = $parentNode.find('#sno');
+
+            table.render({
+                elem: '#box',
+                id: 'all'
+                , url: '/bySno?sno=' + $sno.val()
+                , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                , cols: [[
+                    {field: 'sno', title: '学号'}
+                    ,{field: 'name', title: '姓名'}
+                    ,{field: 'clazz', title: '班级'}
+                    ,{field:'s1', title:'作业1'}
+                    ,{field:'s2', title:'作业2'}
+                    ,{field:'s3', title:'作业3'}
+                    ,{field:'s4', title:'作业4'}
+                    ,{field:'s5', title:'作业5'}
+                    ,{field:'s6', title:'作业6'}
+                    ,{field:'s7', title:'作业7'}
+                    ,{field:'s8', title:'作业8'}
+                    ,{field:'s9', title:'作业9'}
+                    ,{field:'s10', title:'作业10'}
+                    ,{field:'total', title:'总成绩'}
+                ]]
+            });
+
+        });
+
+        $('#selectBtn2').click(function() {
+
+            var $parentNode = $(this).parent();
+            var $clazz = $parentNode.find('#clazz');
+
+            table.render({
+                elem: '#box',
+                id: 'all'
+                , url: '/byClazz?clazz=' + $clazz.val()
+                , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+                , cols: [[
+                    {field: 'sno', title: '学号'}
+                    ,{field: 'name', title: '姓名'}
+                    ,{field: 'clazz', title: '班级'}
+                    ,{field:'s1', title:'作业1'}
+                    ,{field:'s2', title:'作业2'}
+                    ,{field:'s3', title:'作业3'}
+                    ,{field:'s4', title:'作业4'}
+                    ,{field:'s5', title:'作业5'}
+                    ,{field:'s6', title:'作业6'}
+                    ,{field:'s7', title:'作业7'}
+                    ,{field:'s8', title:'作业8'}
+                    ,{field:'s9', title:'作业9'}
+                    ,{field:'s10', title:'作业10'}
+                    ,{field:'total', title:'总成绩'}
+                ]]
+            });
+
+        });
+
+    });
+</script>
+</body>
+</html>

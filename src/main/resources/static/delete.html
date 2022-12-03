@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除成绩</title>
+    <link rel="stylesheet" href="css/layui.css">
+</head>
+<body>
+<a href="/">返回首页</a>
+<form action="" onsubmit="return false">
+    学号：<input type="text" placeholder="请输入学号" id="sno">
+    <button id="submitBtn">删除</button>
+</form>
+<table class="layui-hide" id="box" lay-filter="demo"></table></div>
+
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/layui.js" charset="utf-8"></script>
+<script>
+    layui.use('table', function() {
+        var table = layui.table;
+        table.render({
+            elem: '#box',
+            id: 'all'
+            , url: '/all'
+            , cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+            , cols: [[
+                {field: 'sno', title: '学号'}
+                ,{field: 'name', title: '姓名'}
+                ,{field: 'clazz', title: '班级'}
+                ,{field:'s1', title:'作业1'}
+                ,{field:'s2', title:'作业2'}
+                ,{field:'s3', title:'作业3'}
+                ,{field:'s4', title:'作业4'}
+                ,{field:'s5', title:'作业5'}
+                ,{field:'s6', title:'作业6'}
+                ,{field:'s7', title:'作业7'}
+                ,{field:'s8', title:'作业8'}
+                ,{field:'s9', title:'作业9'}
+                ,{field:'s10', title:'作业10'}
+                ,{field:'total', title:'总成绩'}
+            ]]
+        });
+
+        $('#submitBtn').click(function() {
+
+            var $parentNode = $(this).parent();
+            var $sno = $parentNode.find('#sno');
+
+            $.ajax({
+                url: "/deleteInfo?sno=" + $sno.val(),
+                success: function () {
+                    table.reload('all')
+                }
+            })
+
+        });
+
+    });
+</script>
+</body>
+</html>
