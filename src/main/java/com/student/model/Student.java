@@ -11,7 +11,7 @@ public class Student {
     //学号
     private String studentid;
     //学生姓名
-    private String name;
+    private String sname;
     //学生班级
     private String classs;
     //性别

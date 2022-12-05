@@ -33,8 +33,8 @@ public class InfoController {
     public String bySno(@RequestParam String sno) {
         Student student = infoService.selectBySno(sno);
         String s = JSONObject.toJSONString(student);
-        String builder = "{\"code\":0, \"data\":[" +
-                s + "]}";
+        String builder = "{\"code\":0, \"data\":" +
+                s + "}";
         return builder;
     }
 
@@ -50,8 +50,8 @@ public class InfoController {
 
     @RequestMapping("/updateInfo")
     @ResponseBody
-    public String updateInfo(@RequestParam String sno, @RequestParam double score, @RequestParam int no) {
-        int update = infoService.update(sno, score, no);
+    public String updateInfo(@RequestParam String name, @RequestParam String gender, @RequestParam String sno,@RequestParam String college,@RequestParam String classs,@RequestParam String idcard,@RequestParam String nativeplace, @RequestParam String birthday) {
+        int update = infoService.update(name,gender,sno,college,classs,idcard,nativeplace,birthday);
         if (update == 1) {
             return "success";
         } else {
@@ -70,26 +70,4 @@ public class InfoController {
         }
     }
 
-    @RequestMapping("/rank1")
-    @ResponseBody
-    public String rank1() {
-        List<Student> students = infoService.selectAll();
-        int[] rank = new int[10];
-        for (Student student : students) {
-            rank[(int) (student.getTotal() / 10)]++;
-        }
-        return JSONObject.toJSONString(rank);
-    }
-
-    @RequestMapping("/rank2")
-    @ResponseBody
-    public String rank2() {
-        List<Student> students = infoService.selectAll();
-        List<Rank2> rank2s = new ArrayList<>();
-        for (Student student : students) {
-            Rank2 rank2 = new Rank2(student);
-            rank2s.add(rank2);
-        }
-        return JSONObject.toJSONString(rank2s);
-    }
 }

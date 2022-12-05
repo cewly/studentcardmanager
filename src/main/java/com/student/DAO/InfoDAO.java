@@ -10,18 +10,9 @@ import java.util.List;
 public interface InfoDAO {
     //根据学号删除学生
     int delete(String sno);
-    //修改学生某次成绩
-    int update1(String sno, double score);
-    int update2(String sno, double score);
-    int update3(String sno, double score);
-    int update4(String sno, double score);
-    int update5(String sno, double score);
-    int update6(String sno, double score);
-    int update7(String sno, double score);
-    int update8(String sno, double score);
-    int update9(String sno, double score);
-    int update10(String sno, double score);
-    //根据学号查询成绩
+    //修改学生证信息
+    int update(String name,String gender,String sno,String college,String classs,String idcard,String nativeplace,String birthday);
+    //根据学号查询学生证信息
     Student selectBySno(String sno);
     //根据班级查询成绩
     List<Student> selectByClazz(String clazz);

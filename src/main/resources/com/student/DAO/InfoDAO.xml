@@ -4,8 +4,8 @@
 <mapper namespace="com.student.DAO.InfoDAO">
     <resultMap id="infoMap" type="com.student.model.Student">
         <id property="sno" column="sno"/>
-        <result property="name" column="sname"/>
-        <result property="clazz" column="sclass"/>
+        <result property="sname" column="name"/>
+        <result property="classs" column="class"/>
         <result property="s1" column="s1"/>
         <result property="s2" column="s2"/>
         <result property="s3" column="s3"/>
@@ -24,64 +24,10 @@
         where studentid=#{sno};
     </delete>
 
-    <update id="update1">
-        update info
-        set s1 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update2">
-        update info
-        set s2 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update3">
-        update info
-        set s3 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update4">
-        update info
-        set s4 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update5">
-        update info
-        set s5 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update6">
-        update info
-        set s6 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update7">
-        update info
-        set s7 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update8">
-        update info
-        set s8 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update9">
-        update info
-        set s9 = ${score}
-        where sno=#{sno};
-    </update>
-
-    <update id="update10">
-        update info
-        set s10 = ${score}
-        where sno=#{sno};
+    <update id="update">
+        update studentcard
+        set name = #{name},gender=#{gender},college=#{college},class=#{classs},idcard=#{idcard},nativeplace=#{nativeplace},birthday=#{birthday}
+        where studentid=#{sno};
     </update>
 
     <select id="selectBySno" resultMap="infoMap">
