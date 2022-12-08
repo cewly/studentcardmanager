@@ -38,10 +38,10 @@ public class InfoController {
         return builder;
     }
 
-    @RequestMapping("/byClazz")
+    @RequestMapping("/byClasss")
     @ResponseBody
-    public String byClazz(@RequestParam String clazz) {
-        List<Student> students = infoService.selectByClazz(clazz);
+    public String byClasss(@RequestParam String classs) {
+        List<Student> students = infoService.selectByClasss(classs);
         String s = JSONObject.toJSONString(students);
         String builder = "{\"code\":0, \"data\":" +
                 s + "}";

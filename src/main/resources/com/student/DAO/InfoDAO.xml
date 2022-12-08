@@ -6,16 +6,6 @@
         <id property="sno" column="sno"/>
         <result property="sname" column="name"/>
         <result property="classs" column="class"/>
-        <result property="s1" column="s1"/>
-        <result property="s2" column="s2"/>
-        <result property="s3" column="s3"/>
-        <result property="s4" column="s4"/>
-        <result property="s5" column="s5"/>
-        <result property="s6" column="s6"/>
-        <result property="s7" column="s7"/>
-        <result property="s8" column="s8"/>
-        <result property="s9" column="s9"/>
-        <result property="s10" column="s10"/>
     </resultMap>
 
     <delete id="delete">
@@ -35,8 +25,9 @@
         from studentcard where studentid=#{sno};
     </select>
 
-    <select id="selectByClazz" resultMap="infoMap">
-        select * from info where sclass=#{clazz}
+    <select id="selectByClasss" resultMap="infoMap">
+        select *
+        from studentcard where class=#{classs}
     </select>
 
     <select id="selectAll" resultMap="infoMap">

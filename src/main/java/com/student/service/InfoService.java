@@ -9,6 +9,6 @@ public interface InfoService {
     int update(String sno,String gender,String studentid,String college,String classs,String idcard,String nativeplace,String birthday);
     List<Student> selectAll();
     Student selectBySno(String sno);
-    List<Student> selectByClazz(String clazz);
+    List<Student> selectByClasss(String classs);
     int delete(String sno);
 }

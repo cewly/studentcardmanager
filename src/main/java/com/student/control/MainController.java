@@ -11,28 +11,9 @@ public class MainController {
         return "index.html";
     }
 
-    @RequestMapping("/select")
+    @RequestMapping("/class")
     public String select() {
-        return "select.html";
+        return "class.html";
     }
 
-    @RequestMapping("/delete")
-    public String delete() {
-        return "delete.html";
-    }
-
-    @RequestMapping("/update")
-    public String update() {
-        return "update.html";
-    }
-
-    @RequestMapping("/add")
-    public String add() {
-        return "add.html";
-    }
-
-    @RequestMapping("/statistics")
-    public String statistics() {
-        return "statistics.html";
-    }
 }

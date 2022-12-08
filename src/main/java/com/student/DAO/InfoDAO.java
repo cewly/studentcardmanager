@@ -15,7 +15,7 @@ public interface InfoDAO {
     //根据学号查询学生证信息
     Student selectBySno(String sno);
     //根据班级查询成绩
-    List<Student> selectByClazz(String clazz);
+    List<Student> selectByClasss(String classs);
     //查询所有学生信息
     List<Student> selectAll();
 

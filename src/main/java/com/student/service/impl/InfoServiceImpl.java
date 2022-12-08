@@ -33,8 +33,8 @@ public class InfoServiceImpl implements InfoService {
     }
 
     @Override
-    public List<Student> selectByClazz(String clazz) {
-        List<Student> students = infoDAO.selectByClazz(clazz);
+    public List<Student> selectByClasss(String classs) {
+        List<Student> students = infoDAO.selectByClasss(classs);
         return students;
     }
 

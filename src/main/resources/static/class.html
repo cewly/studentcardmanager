@@ -16,9 +16,14 @@
   <meta name="MobileOptimized" content="320">
   <!--Start Style -->
   <link rel="stylesheet" type="text/css" href="css/fonts.css">
+  <link rel="stylesheet" type="text/css" href="css/datatables.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/icofont.min.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <!--Page Specific -->
+  <link rel="stylesheet" type="text/css" href="css/nice-select.css">
+  <!--Custom Style -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" id="theme-change" type="text/css" href="">
 </head>
@@ -40,12 +45,6 @@
         </a>
       </div>
       <div class="header-right">
-        <div class="serch-wrapper">
-          <form>
-            <input type="text" placeholder="Search Here...">
-          </form>
-          <a class="search-close" href="javascript:void(0);"><span class="icofont-close-line"></span></a>
-        </div>
         <div class="header-left">
           <div class="header-links">
             <a href="javascript:void(0);" class="toggle-btn">
@@ -61,23 +60,23 @@
     <div class="side-menu-wrap">
       <ul class="main-menu">
         <li>
-          <a href="index.html" >
-              <span class="icon-menu feather-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              </span>
-              <span class="menu-text">
-                个人信息界面
-              </span>
+          <a href="/index" >
+                            <span class="icon-menu feather-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            </span>
+            <span class="menu-text">
+                                个人信息界面
+                            </span>
           </a>
         </li>
         <li>
-          <a href="class.html">
-            <span class="icon-menu feather-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-            </span>
+          <a href="/class">
+                            <span class="icon-menu feather-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-package"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                            </span>
             <span class="menu-text">
-              按班级查找
-            </span>
+                                按班级查找
+                            </span>
           </a>
         </li>
       </ul>
@@ -97,7 +96,7 @@
               <ul>
                 <li>
                   <div class="ad-user-btn">
-                    <input class="form-control" type="text" placeholder="输入学号查找" id="searchbox">
+                    <input class="form-control" type="text" placeholder="按班级查找" id="searchbox">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 56.966 56.966">
                       <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23
 												s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92
@@ -117,80 +116,31 @@
         </div>
       </div>
 
-      <!-- Dashboard Start -->
-      <div class="row" >
-        <div class="col-xl-13">
-          <form class="card" id="studentinf">
-            <div class="card-header">
-              <h4 class="card-title mb-0">个人信息</h4>
-              <div class="card-options"><a class="card-options-collapse" href="javascript:;" data-bs-toggle="card-collapse" ><i class="fe fe-chevron-up"></i></a><a class="card-options-remove" href="javascript:;" data-bs-toggle="card-remove" ><i class="fe fe-x"></i></a></div>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="mb-3">
-                    <label class="form-label">姓名</label>
-                    <input class="form-control" type="text" placeholder="name" id="sname">
-                  </div>
-                </div>
-                <div class="col-sm-5 col-md-3">
-                  <div class="mb-3">
-                    <label class="form-label">性别</label>
-                    <input class="form-control" type="text" placeholder="gender" id="gender">
-                  </div>
-                </div>
-                <div class="col-sm-5 col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">学号</label>
-                    <input class="form-control" type="text" placeholder="studentid" id="studentid">
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">学院</label>
-                    <input class="form-control" type="text" placeholder="college" id="college">
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">班级</label>
-                    <input class="form-control" type="text" placeholder="class" id="class">
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="mb-3">
-                    <label class="form-label">身份证</label>
-                    <input class="form-control" type="text" placeholder="id" id="idcard">
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">籍贯</label>
-                    <input class="form-control" type="text" placeholder="City" id="nativeplace">
-                  </div>
-                </div>
-                <div class="col-sm-6 col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">生日</label>
-                    <input class="form-control" type="text" placeholder="birthday" id="birthday">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <button class="btn btn-primary squer-btn" type="button" id="update">更新信息</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-light squer-btn" onclick="unreadonlyfunc()" type="button" >修改信息</button>
-                </div>
+      <!-- Dark Head Table Card-->
+      <div >
+        <div class="card table-card">
+          <div class="card-body">
+            <div class="chart-holder">
+              <div class="table-responsive">
+                <table class="table mb-0">
+                <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">姓名</th>
+                  <th scope="col">学号</th>
+                  <th scope="col">性别</th>
+                  <th scope="col">班级</th>
+                  <th scope="col">学院</th>
+                </tr>
+                </thead>
+                <tbody id="tbody1"></tbody>
+              </table>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
-
     </div>
-
   </div>
 </div>
 
@@ -323,62 +273,36 @@
 <!-- Script Start -->
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
+<script src="js/datatables.min.js"></script>
+<script src="js/dataTables.responsive.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/swiper.min.js"></script>
-<script src="js/apexcharts.min.js"></script>
-<script src="js/control-chart-apexcharts.js"></script>
 <!-- Page Specific -->
 <script src="js/nice-select.min.js"></script>
 <!-- Custom Script -->
 <script src="js/custom.js"></script>
 <script>
-  window.onload=function () {
-    $('#studentinf').find('input').attr('readonly',true);
-  }
-  //修改信息时设置可修改
-  function unreadonlyfunc()
-  {
-    $('#studentinf').find('input').attr('readonly',false);
-    //学号唯一，不可修改
-    document.querySelector("#studentid").readOnly=true;
-  }
-  //按学号查找
   $('#search').click(function() {
-    let sno=document.getElementById("searchbox").value;
-    // console.log($sno);
+    let classs=document.getElementById("searchbox").value;
+    // console.log(classs);
     $.ajax({
-      url: "/bySno?sno=" + sno,
+      url: "/byClasss?classs=" + classs,
       dataType:'json',
       success: function (result) {
-        console.log(result.data);
-        document.getElementById("sname").value=result.data.sname.toString();
-        document.getElementById("birthday").value=result.data.birthday.toString();
-        document.getElementById("college").value=result.data.college.toString();
-        document.getElementById("gender").value=result.data.gender.toString();
-        document.getElementById("class").value=result.data.classs.toString();
-        document.getElementById("nativeplace").value=result.data.nativeplace.toString();
-        document.getElementById("studentid").value=result.data.studentid.toString();
-        document.getElementById("idcard").value=result.data.idcard.toString();
-
-      }
-    })
-  });
-  $('#update').click(function() {
-    let sno = document.getElementById("studentid").value;
-    let name=document.getElementById("sname").value;
-    let gender=document.getElementById("gender").value;
-    let college=document.getElementById("college").value;
-    let classs=document.getElementById("class").value;
-    let idcard=document.getElementById("idcard").value;
-    let nativeplace=document.getElementById("nativeplace").value;
-    let birthday=document.getElementById("birthday").value;
-    let $url=`/updateInfo?sno=${sno}&name=${name}&gender=${gender}&college=${college}&classs=${classs}&idcard=${idcard}&nativeplace=${nativeplace}&birthday=${birthday}`;
-    // console.log($url);
-    $.ajax({
-      url: $url.toString(),
-      success: function (result) {
-        console.log(result);
-        alert("信息更新成功");
+        var list = result.data;
+        // console.log(list[1]);
+        var str1 = "";
+        for (var i = 0; i < list.length; i++) {   //遍历
+          str1 += "<tr >" +
+                  "<th scope=\"row\">"+(i+1)    + "</th>" +
+                  "<td>" + list[i].sname    + "</td>" +    //i代表下标，获取数据中的下标为i的1的值
+                  "<td>" + list[i].studentid+ "</td>" +
+                  "<td>" + list[i].gender   + "</td>" +
+                  "<td>" + list[i].classs   + "</td>" +
+                  "<td>" + list[i].college  + "</td>" +
+                  "</tr>";
+        }
+        tbody1.innerHTML = str1;   //将数据写入html中
       }
     })
   });
